@@ -107,7 +107,7 @@ namespace
 constexpr const char *const s_langcode_invalid = "__";
 
 constexpr const char *const s_langcode_us = "US";
-constexpr const char *const s_langcode_en = s_langcode_invalid;
+constexpr const char *const s_langcode_en = s_langcode_invalid; // Polypheides: If this is still invalid and we can't change it to "GB" it is better to add a communty-based British
 constexpr const char *const s_langcode_de = "DE";
 constexpr const char *const s_langcode_fr = "FR";
 constexpr const char *const s_langcode_es = "ES";
@@ -119,10 +119,12 @@ constexpr const char *const s_langcode_zh = "ZH";
 constexpr const char *const s_langcode___ = s_langcode_invalid;
 constexpr const char *const s_langcode_bp = "BP";
 constexpr const char *const s_langcode_pl = "PL";
-constexpr const char *const s_langcode_uk = s_langcode_invalid;
-constexpr const char *const s_langcode_ru = "RU";
+constexpr const char *const s_langcode_un = s_langcode_invalid;
 constexpr const char *const s_langcode_ar = "AR";
+// constexpr const char *const s_langcode_gb = "GB"; Polypheides: If we add British as a community-based language instead this string should be added.
+constexpr const char *const s_langcode_ru = "RU";
 constexpr const char *const s_langcode_se = "SE";
+constexpr const char *const s_langcode_uk = "UK";
 
 constexpr const char *const s_langcodes[] = {
     s_langcode_us,
@@ -138,14 +140,16 @@ constexpr const char *const s_langcodes[] = {
     s_langcode___,
     s_langcode_bp,
     s_langcode_pl,
-    s_langcode_uk,
-    s_langcode_ru,
+    s_langcode_un,
     s_langcode_ar,
+//  s_langcode_gb, Polypheides: If we add British as a community-based language instead this string should be added.
+    s_langcode_ru,
     s_langcode_se,
+    s_langcode_uk,
 };
 
-static_assert(s_langcode_us == s_langcodes[size_t(LanguageID::US)]);
-static_assert(s_langcode_en == s_langcodes[size_t(LanguageID::UK)]);
+static_assert(s_langcode_us == s_langcodes[size_t(LanguageID::US)]); // Polypheides: Recommendations to change this in the gametextcommon.cpp to en_US.
+static_assert(s_langcode_en == s_langcodes[size_t(LanguageID::UK)]); // Polypheides: Recommendations to change this in the gametextcommon.cpp to en_GB.
 static_assert(s_langcode_de == s_langcodes[size_t(LanguageID::GERMAN)]);
 static_assert(s_langcode_fr == s_langcodes[size_t(LanguageID::FRENCH)]);
 static_assert(s_langcode_es == s_langcodes[size_t(LanguageID::SPANISH)]);
@@ -157,10 +161,13 @@ static_assert(s_langcode_zh == s_langcodes[size_t(LanguageID::CHINESE)]);
 static_assert(s_langcode___ == s_langcodes[size_t(LanguageID::UNUSED_1)]);
 static_assert(s_langcode_bp == s_langcodes[size_t(LanguageID::BRAZILIAN)]);
 static_assert(s_langcode_pl == s_langcodes[size_t(LanguageID::POLISH)]);
-static_assert(s_langcode_uk == s_langcodes[size_t(LanguageID::UNKNOWN)]);
-static_assert(s_langcode_ru == s_langcodes[size_t(LanguageID::RUSSIAN)]);
+static_assert(s_langcode_un == s_langcodes[size_t(LanguageID::UNKNOWN)]);
 static_assert(s_langcode_ar == s_langcodes[size_t(LanguageID::ARABIC)]);
+// static_assert(s_langcode_ar == s_langcodes[size_t(LanguageID::ARABIC)]); Polypheides: If we add British as a community-based language instead this string should be added.
+static_assert(s_langcode_ru == s_langcodes[size_t(LanguageID::RUSSIAN)]);
 static_assert(s_langcode_se == s_langcodes[size_t(LanguageID::SWEDISH)]);
+static_assert(s_langcode_uk == s_langcodes[size_t(LanguageID::UKRAINIAN)]);
+
 static_assert(ARRAY_SIZE(s_langcodes) == g_languageCount);
 
 constexpr const char *Get_Language_Code(LanguageID language)

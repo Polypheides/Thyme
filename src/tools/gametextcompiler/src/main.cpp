@@ -89,6 +89,7 @@ SWAP_LANGUAGE_STRINGS(FILE_ID:optional,LANGUAGE:[1]mandatory,LANGUAGE:[1]mandato
 SWAP_AND_SET_LANGUAGE(FILE_ID:optional,LANGUAGE:[1]mandatory)
   > Swaps string data in FILE_ID between current selected file language and LANGUAGE.
 )#");
+// Polypheides: If British is added as a community-based language, include it in the language list: |Arabic|British|Russian|Swedish|Ukrainian
 //       1         2         3         4         5         6         7         8         9        10        11        12
 //3456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 Print_Line(
@@ -102,7 +103,7 @@ FILE_PATH takes any relative or absolute path.
 
 LANGUAGE:enum
 LANGUAGE takes one [1] or multiple [n] languages, separated by pipe:
-All|English|German|French|Spanish|Italian|Japanese|Korean|Chinese|Brazilian|Polish|Unknown|Russian|Arabic|Swedish
+All|English|German|French|Spanish|Italian|Japanese|Korean|Chinese|Brazilian|Polish|Unknown|Arabic|Russian|Swedish|Ukrainian
 
 OPTION:enum
 OPTION takes one [1] or multiple [n] options, separated by pipe:
