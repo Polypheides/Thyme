@@ -114,6 +114,7 @@ option(BUILD_TESTS "Builds the unit tests." OFF)
 option(USE_SANITIZER "Builds with address sanitizer" OFF)
 option(BUILD_COVERAGE "Instruments the code with coverage." OFF)
 option(BUILD_TOOLS "Builds the developer/debug tools." OFF)
+option(BUILD_TEXTCOMPILER "Builds the gametextcompiler tool." OFF)
 
 option(FETCHCONTENT_QUIET "" OFF)
 
@@ -471,6 +472,11 @@ if(DLL_INSTALL_PREFIX AND ${CMAKE_VERSION} VERSION_GREATER "3.13.0")
     foreach(target IN LISTS INSTALL_TARGETS)
         install(FILES $<TARGET_PDB_FILE:${target}> DESTINATION "${DLL_INSTALL_PREFIX}" OPTIONAL)
     endforeach()
+endif()
+
+# Build gametextcompiler
+if(BUILD_TEXTCOMPILER)
+    add_subdirectory(src/tools gametextcompiler)
 endif()
 
 # Build tests
