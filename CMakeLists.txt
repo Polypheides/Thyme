@@ -476,7 +476,7 @@ endif()
 
 # Build gametextcompiler
 if(BUILD_TEXTCOMPILER)
-    add_subdirectory(src/tools gametextcompiler)
+    add_subdirectory(src/tools/gametextcompiler)
 endif()
 
 # Build tests
