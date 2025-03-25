@@ -24,8 +24,8 @@
 enum class LanguageID : int32_t
 {
     // Official game languages.
-    US = 0, // Polypheides: Recommendations to change this in the gametextcommon.cpp to en_US.
-    UK = 1, // Polypheides: Recommendations to change this in the gametextcommon.cpp to en_GB.
+    US = 0,
+    UK = 1,
     GERMAN = 2,
     FRENCH = 3,
     SPANISH = 4,
@@ -41,12 +41,13 @@ enum class LanguageID : int32_t
     // Unspecified language. Default in GameTextFile class.
     UNKNOWN = 13,
 
-    // Community game languages. Polypheides: when adding try to set the communty-based languages in alphabetical order.
+    // Community game languages.
     ARABIC = 14,
-//  BRITISH = 15 Polypheides: If community-based British is added this string is needed and all the number after needs changed.
-    RUSSIAN = 15,
-    SWEDISH = 16,
-    UKRAINIAN = 17,
+    AZERBAIJANI = 15,
+    RUSSIAN = 16,
+    SWEDISH = 17,
+    TURKISH = 18,
+    UKRAINIAN = 19,
 
     COUNT
 };

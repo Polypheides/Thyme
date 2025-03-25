@@ -19,7 +19,7 @@ namespace Thyme
 {
 
 constexpr const char *const s_localization_us = "English";
-constexpr const char *const s_localization_en = ""; // Polypheides: is "en" changable? constexpr const char *const s_localization_gb = "British"; if not maybe add a community-based British translation.
+constexpr const char *const s_localization_en = "";
 constexpr const char *const s_localization_de = "German";
 constexpr const char *const s_localization_fr = "French";
 constexpr const char *const s_localization_es = "Spanish";
@@ -33,9 +33,10 @@ constexpr const char *const s_localization_bp = "Brazilian";
 constexpr const char *const s_localization_pl = "Polish";
 constexpr const char *const s_localization_un = "Unknown";
 constexpr const char *const s_localization_ar = "Arabic";
-// constexpr const char *const s_localization_gb = "British"; Polypheides: If we add British as a community-based language instead this string should be added and s_localization_en should be untouched. example on differences Truck = Lorry, etc.
+constexpr const char *const s_localization_az = "Azerbaijani";
 constexpr const char *const s_localization_ru = "Russian";
 constexpr const char *const s_localization_sv = "Swedish";
+constexpr const char *const s_localization_tr = "Turkish";
 constexpr const char *const s_localization_uk = "Ukrainian";
 
 constexpr const char *const s_localizations[] = {
@@ -54,14 +55,15 @@ constexpr const char *const s_localizations[] = {
     s_localization_pl,
     s_localization_un,
     s_localization_ar,
-//  s_localization_gb, Polypheides: If we add British as a community-based language instead this string should be added.
+    s_localization_az,
     s_localization_ru,
     s_localization_sv,
+    s_localization_tr,
     s_localization_uk,
 };
 
-static_assert(s_localization_us == s_localizations[size_t(LanguageID::US)]); // Polypheides: Maybe LanguageID::en_US makes more sense.
-static_assert(s_localization_en == s_localizations[size_t(LanguageID::UK)]); // Polypheides: If UK here represent United Kingdom maybe en_GB is better decided by how code gets changed.
+static_assert(s_localization_us == s_localizations[size_t(LanguageID::US)]);
+static_assert(s_localization_en == s_localizations[size_t(LanguageID::UK)]);
 static_assert(s_localization_de == s_localizations[size_t(LanguageID::GERMAN)]);
 static_assert(s_localization_fr == s_localizations[size_t(LanguageID::FRENCH)]);
 static_assert(s_localization_es == s_localizations[size_t(LanguageID::SPANISH)]);
@@ -75,9 +77,10 @@ static_assert(s_localization_bp == s_localizations[size_t(LanguageID::BRAZILIAN)
 static_assert(s_localization_pl == s_localizations[size_t(LanguageID::POLISH)]);
 static_assert(s_localization_un == s_localizations[size_t(LanguageID::UNKNOWN)]);
 static_assert(s_localization_ar == s_localizations[size_t(LanguageID::ARABIC)]);
-// static_assert(s_localization_gb == s_localizations[size_t(LanguageID::BRITISH)]); Polypheides: If we add British as a community-based language instead this string should be added.
+static_assert(s_localization_az == s_localizations[size_t(LanguageID::AZERBAIJANI)]);
 static_assert(s_localization_ru == s_localizations[size_t(LanguageID::RUSSIAN)]);
 static_assert(s_localization_sv == s_localizations[size_t(LanguageID::SWEDISH)]);
+static_assert(s_localization_tr == s_localizations[size_t(LanguageID::TURKISH)]);
 static_assert(s_localization_uk == s_localizations[size_t(LanguageID::UKRAINIAN)]);
 
 
